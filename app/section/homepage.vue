@@ -6,18 +6,13 @@ import { ref, onMounted } from 'vue'
 
 const weather = ref(null)
 const error = ref(null)
-const API_KEY = "6393574a0e45173255d015bb1b0bd155"
 
 const getWeather = async () => {
   try {
-    const response = await fetch(
-      `http://api.weatherstack.com/current?access_key=${API_KEY}&query=Pretoria`
-    )
-    const data = await response.json()
-    weather.value = data
-  } 
-    catch (err) {
-      error.value = err.message
+    const response = await $fetch('/api/weather')
+    weather.value = response
+  } catch (err) {
+    error.value = err.message
   }
 }
 

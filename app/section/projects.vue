@@ -6,18 +6,13 @@
 
   const stocks = ref(null)
   const error = ref(null)
-  const API_KEY = "cdf502dd0503cb648d16d71cbabf9f35"
 
   const getStockData = async () => {
-    try {
-      const response = await fetch(
-        `http://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=AAPL`
-    )
-      const data = await response.json()
-        stocks.value = data
-  } 
-    catch (err) {
-      error.value = err.message
+  try {
+    const response = await $fetch('/api/stocks')
+    stocks.value = response
+  } catch (err) {
+    error.value = err.message
   }
 }
 
