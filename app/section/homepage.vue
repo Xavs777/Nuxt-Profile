@@ -45,7 +45,7 @@ onMounted(() => {
           </p>
         </div>
 
-        <img src="/images/pic.png" alt="my-face" class="image" />
+        <img src="/pic.png" alt="my-face" class="image" />
       </div>
     </div>
     <div class="card">
