@@ -8,7 +8,7 @@
   <div class="card">
     <h1 class="title">Contact Form</h1>
     
-    <form name="contact" method="POST" data-netlify="true" class="form">
+    <form name="contact" method="POST" netlify class="form">
       <p>
         <label class="label">Your Name and Surname: <input type="text" name="name" class="input" />
         </label>
